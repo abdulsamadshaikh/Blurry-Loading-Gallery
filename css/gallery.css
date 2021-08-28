@@ -1,0 +1,120 @@
+/*  
+Project Name: Blurry Loading Gallery
+Description: This is the Blurry Loading Gallery with a progress bar. In this project, I have used Unsplash images which are free to use. Give me a thumbs-up, If you like it. Enjoy!
+Author: Abdul Samad
+Author URI: https://getabdulsamad.com/
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: transparent linear-gradient(91deg, #85c1e9 0%, #aed6f1 100%);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px 80px 20px;
+  -webkit-display: flex;
+  -moz-display: flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+
+.title h1 {
+  color: #fff;
+  font-size: 3vw;
+  font-weight: 500;
+  text-align: center;
+  -webkit-text-shadow: 1px 1px rgba(0, 0, 0, 0.24);
+  -moz-text-shadow: 1px 1px rgba(0, 0, 0, 0.24);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.24);
+}
+
+.blurry-gallery {
+  -webkit-display: grid;
+  -moz-display: grid;
+  display: grid;
+  -webkit-grid-template-columns: auto auto auto;
+  -moz-grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto;
+  -webkit-grid-gap: 15px 15px;
+  -moz-grid-gap: 15px 15px;
+  grid-gap: 15px 15px;
+}
+
+.blurry-gallery .photo {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  line-height: 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.blurry-gallery .photo-inner {
+  -webkit-filter: blur(35px);
+  filter: blur(35px);
+}
+
+.blurry-gallery .photo img {
+  max-width: 100%;
+  width: 400px;
+  height: 350px;
+  -webkit-object-fit: cover;
+  -moz-object-fit: cover;
+  object-fit: cover;
+}
+
+.blurry-gallery .photo .loading {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 500;
+}
+
+.blurry-gallery .photo .loading.completed {
+  display: none;
+}
+
+/*** Mobile Styling Starts From Here ***/
+@media only screen and (max-width: 991px) {
+  .blurry-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .blurry-gallery .photo img {
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .title h1 {
+    font-size: 6vw;
+  }
+}
